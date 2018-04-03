@@ -1,0 +1,22 @@
+{
+  "name": "zillowhomes",
+  "version": "1.0.0",
+  "description": "SDE Test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/snavula/ZillowHomes.git"
+  },
+  "author": "Sneha Avula",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/snavula/ZillowHomes/issues"
+  },
+  "homepage": "https://github.com/snavula/ZillowHomes#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
