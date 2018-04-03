@@ -4,7 +4,7 @@ var env = process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var app = express();
 
-app.set('views', __dirname + 'server/views');
+app.set('views', __dirname + '/server/views');
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
@@ -12,5 +12,6 @@ app.get('*', function(req, res) {
     res.render('index'); 
 });
 
-var port = 4040;
+var port = 3030;
 app.listen(port);
+console.log("Listening on"+port);
