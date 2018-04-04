@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<%- include('partials/_head.ejs'); %>
+  <body>
+   <div class="container-fluid">
+    <%- include('partials/_header.ejs'); %>
+    <div class="row text-center">
+     <div id="locationField" 
+         class="col-sm-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
+      <input id="autocomplete" 
+             class="col-sm-12" 
+             placeholder="Enter an address, city/state or zipcode"
+             onFocus="geolocate()"
+             type="text">
+      </input>
+     </div>
+    </div>
+   </div>
+   <%- include('partials/_footer.ejs'); %>
+ <%- include('partials/_footer.ejs'); %>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+    <!--
+    <div  class="col-md-push-3 col-md-6">
+    <table id="address">
+      <tr>
+        <td class="label">Street address</td>
+        <td class="slimField"><input class="field" id="street_number"
+              disabled="true"></input></td>
+        <td class="wideField" colspan="2"><input class="field" id="route"
+              disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">City</td>
+
+      
+        <td class="wideField" colspan="3"><input class="field" id="locality"
+              disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">State</td>
+        <td class="slimField"><input class="field"
+              id="administrative_area_level_1" disabled="true"></input></td>
+        <td class="label">Zip code</td>
+        <td class="wideField"><input class="field" id="postal_code"
+              disabled="true"></input></td>
+      </tr>
+      <tr>
+        <td class="label">Country</td>
+        <td class="wideField" colspan="3"><input class="field"
+              id="country" disabled="true"></input></td>
+      </tr>
+     </table>
+</div>-->
