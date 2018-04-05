@@ -26,7 +26,8 @@ app.get('/partials/:partialPath', function(req, res) {
 });
 
 const request = require('request');
-var convert = require('xml-js');
+
+const XMLExtract = require('xml-extract');
 
 //...
 //...
@@ -53,20 +54,27 @@ request(url, function (err, response, body) {
     if(err){
       res.render('index', {homes: null, error: 'Error, please try again'});
     } else {
-      
-      var bodyJSON = convert.xml2json(body, {compact: true, spaces: 4});
-      var parseJSON = JSON.parse(bodyJSON);
-        console.log(parseJSON);
-      home = parseJSON['results'];
+      var bodyJSON = convert.xml2json(body, {compact: false, spaces: 4});
+     
         
-      res.render('index', {homes: home, error: null});
-     /* if(weather.main == undefined){
-        res.render('index', {weather: null, error: 'Error, please try again'});
-      } else {
-        let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-        console.log(weatherText);
-        res.render('index', {weather: weatherText, error: null});
-      }*/
+        
+        XMLExtract(body, 'results', false, (error, element) => {
+  if (error) {
+    throw new Error(error);
+  }
+ 
+   
+  console.log(element);
+   res.render('index', {homes: element, error: null});
+ 
+  // output:  
+  // http://www.example.com/1 
+  // http://www.example.com/2 
+  // http://www.example.com/3 
+});
+        
+        
+      
     }
   });
 })
