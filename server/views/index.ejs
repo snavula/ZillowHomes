@@ -7,13 +7,24 @@
     <div class="row text-center">
      <div id="locationField" 
          class="col-sm-12 offset-md-2 col-md-8 offset-lg-3 col-lg-6">
-      <input id="autocomplete" 
+    <form action="/" method="post">
+      <input id="autocomplete"
+             name="address"
              class="col-sm-12" 
              placeholder="Enter an address, city/state or zipcode"
              onFocus="geolocate()"
              type="text">
       </input>
+      <button type="submit" class="btn btn-primary col-sm-12 offset-md-3 col-md-6 ">Find your way home</button>
+      </form>
      </div>
+       <% if(homes !== null){ %>
+        <p><%= homes %></p>
+       <% } %>
+      <% if(error !== null){ %>
+       <p><%= error %></p>
+<% } %>
+ 
     </div>
    </div>
    <%- include('partials/_footer.ejs'); %>
